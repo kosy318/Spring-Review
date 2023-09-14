@@ -7,6 +7,8 @@
 ### 단축키
 
 - ctrl+alt+v: 값을 받는 변수 생성
+- ctrl+shift+alt+t: 여러 refactoring 관련된 것들이 나옴
+- ctrl+alt+m: extract method
 
 ### test
 
