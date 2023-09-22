@@ -1,13 +1,24 @@
 package com.soo.user;
 
+import com.soo.user.repository.JdbcMemberRepository;
 import com.soo.user.repository.MemberRepository;
 import com.soo.user.repository.MemoryMemberRepository;
 import com.soo.user.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.sql.DataSource;
+
 @Configuration
 public class SpringConfig {
+
+    DataSource dataSource;
+
+    @Autowired
+    public SpringConfig(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     @Bean
     public MemberService memberService() {
@@ -16,7 +27,8 @@ public class SpringConfig {
 
     @Bean
     public MemberRepository memberRepository() {
-        return new MemoryMemberRepository();
+//        return new MemoryMemberRepository();
+        return new JdbcMemberRepository(dataSource);
     }
 
 }
