@@ -1,6 +1,7 @@
 package com.soo.user;
 
 import com.soo.user.repository.JdbcMemberRepository;
+import com.soo.user.repository.JdbcTemplateMemberRepository;
 import com.soo.user.repository.MemberRepository;
 import com.soo.user.repository.MemoryMemberRepository;
 import com.soo.user.service.MemberService;
@@ -28,7 +29,8 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 
 }
