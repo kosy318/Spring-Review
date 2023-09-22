@@ -1,25 +1,32 @@
 package com.soo.user;
 
-import com.soo.user.repository.JdbcMemberRepository;
-import com.soo.user.repository.JdbcTemplateMemberRepository;
-import com.soo.user.repository.MemberRepository;
-import com.soo.user.repository.MemoryMemberRepository;
+import com.soo.user.repository.*;
 import com.soo.user.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 
 @Configuration
 public class SpringConfig {
 
     DataSource dataSource;
+    EntityManager em;
+
+//    @Autowired
+//    public SpringConfig(DataSource dataSource) {
+//        this.dataSource = dataSource;
+//    }
 
     @Autowired
-    public SpringConfig(DataSource dataSource) {
-        this.dataSource = dataSource;
+    public SpringConfig(EntityManager em) {
+        this.em = em;
     }
+
+    @Autowired
+
 
     @Bean
     public MemberService memberService() {
@@ -30,7 +37,8 @@ public class SpringConfig {
     public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository();
 //        return new JdbcMemberRepository(dataSource);
-        return new JdbcTemplateMemberRepository(dataSource);
+//        return new JdbcTemplateMemberRepository(dataSource);
+        return new JpaMemberRepository(em);
     }
 
 }

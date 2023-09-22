@@ -10,7 +10,8 @@
 - ctrl+shift+alt+t: 여러 refactoring 관련된 것들이 나옴
 - ctrl+alt+m: extract method
 - ctrl+shift+t: test class 자동 생성
-z
+- ctrl+alt+n: inline variable
+
 ### test
 
 #### why?
