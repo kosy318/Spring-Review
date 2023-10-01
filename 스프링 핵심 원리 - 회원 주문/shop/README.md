@@ -22,4 +22,12 @@
   - 회원 등급에 따라 할인 정책을 적용할 수 있다.
   - 할인 정책은 모든 VIP는 1000원을 할인해주는 고정 금액 할인을 적용해달라. (나중에 변경 될 수 있다.)
   - 할인 정책은 변경 가능성이 높다. 회사의 기본 할인 정책을 아직 정하지 못했고, 오픈 직전까지 고민을 미루고 싶다. 최악의 경우 할인을 적용하지 않을 수 도 있다. (미확정)
+  - 주문 도메인 전체
+    ![image](https://user-images.githubusercontent.com/77595685/271836442-b89f9f02-e4dd-4276-a458-96b76a4e71df.png)
+  - 주문 도메인 클래스 다이어그램
+    ![image](https://user-images.githubusercontent.com/77595685/271836458-47a22939-42c1-494e-b2c8-62d34e335dce.png)
+  - 주문 도메인 객체 다이어그램
+    ![image](https://user-images.githubusercontent.com/77595685/271836551-448fa0fd-0195-42bd-9757-a8a113c656e8.png)
+    ![image](https://user-images.githubusercontent.com/77595685/271836556-02ef88b9-023c-4cfa-b15f-401de80c807e.png)
+
 
